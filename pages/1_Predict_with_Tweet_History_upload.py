@@ -26,9 +26,15 @@ if uploaded_file is not None:
     text = " ".join(tweet for tweet in textTweet)
     wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
     plt.figure(figsize=(8,8))
-    plt.imshow(wordcloud, interpolation='bilinear')
+    y= plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
-    st.pyplot(wordcloud)
+    st.pyplot(y)
+
+
+    >>> fig, ax = plt.subplots()
+>>> ax.scatter([1, 2, 3], [1, 2, 3])
+>>>    ... other plotting actions ...
+>>> st.pyplot(fig)
 
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
