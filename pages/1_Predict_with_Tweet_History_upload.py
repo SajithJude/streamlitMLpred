@@ -8,6 +8,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import numpy as np
 from mpld3 import fig_to_html, plugins
+import streamlit.components.v1 as components
+
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -26,7 +28,8 @@ def create_wordcloud(text):
     plugins.connect(fig, plugins.MousePosition(fontsize=14))
     plugins.connect(fig, plugins.Zoom())
     # plugins.connect(fig, plugins.Pan())
-    st.write(fig_to_html(fig))
+    components.html(fig_to_html(fig), height=600)
+    # st.write()
 
 
 
