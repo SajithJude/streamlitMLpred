@@ -4,10 +4,31 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import TfidfVectorizer
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+import numpy as np
+from mpld3 import fig_to_html, plugins
 import warnings
 warnings.filterwarnings("ignore")
+
+# Create a text area to input text
+# text = st.text_area("Enter text:")
+
+# Create a function to generate a word cloud
+def create_wordcloud(text):
+    wordcloud = WordCloud(width=800, height=800,
+                          background_color='white',
+                          min_font_size=10).generate(text)
+    # Display the word cloud using mpld3
+    fig, ax = plt.subplots()
+    ax.imshow(wordcloud, interpolation='bilinear')
+    ax.axis("off")
+    plugins.connect(fig, plugins.MousePosition(fontsize=14))
+    plugins.connect(fig, plugins.Zoom())
+    plugins.connect(fig, plugins.Pan())
+    st.write(fig_to_html(fig))
+
+
 
 
 # Create file uploader and define accepted file types
@@ -23,12 +44,9 @@ if uploaded_file is not None:
     pdata['weekday'] = pdata['timestamp'].dt.weekday
     vectorizer = TfidfVectorizer(stop_words='english', max_features=500)
     textTweet = pdata['tweet']
+    st.write(textTweet)
     text = " ".join(tweet for tweet in textTweet)
-    wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
-    plt.figure(figsize=(8,8))
-    y= plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    st.pyplot(y)
+    create_wordcloud(text)
 
 
 # Vectorize the text data
