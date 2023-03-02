@@ -86,7 +86,7 @@ if uploaded_file is not None:
         <p style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Bipolar Disorder Risk</p>
         <div style="background-color: #ddd; height: 20px; border-radius: 10px; overflow: hidden;">
             <div style="background-color: #4CAF50; height: 20px; width: {prob*100}; border-radius: 10px; text-align: right; padding-right: 10px;">
-            <span style="color: white; font-size: 50px;">{"{:.2f}%".format(prob*100)}%</span>
+            <span style="color: white; font-size: 16px;">{"{:.2f}%".format(prob*100)}%</span>
             </div>
         </div>
         </div>
@@ -100,7 +100,7 @@ if uploaded_file is not None:
         <p style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Tweets Labeled as Bipolar related</p>
         <div style="background-color: #ddd; height: 20px; border-radius: 10px; overflow: hidden;">
             <div style="background-color: #00308F; height: 20px; width: {num_true_labels}; border-radius: 10px; text-align: right; padding-right: 10px;">
-            <span style="color: white; font-size: 50px;">{num_true_labels}</span>
+            <span style="color: white; font-size: 16px;">{num_true_labels}</span>
             </div>
         </div>
         </div>
