@@ -25,8 +25,10 @@ if uploaded_file is not None:
 
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
+    x = pd.DataFrame(text_features.toarray())
+    x.columns = x.columns.astype(str)
 
-    pfeature_matrix = pd.concat([pd.DataFrame(text_features.toarray()), pdata[['hour', 'weekday']]], axis=1)
+    pfeature_matrix = pd.concat([x, pdata[['hour', 'weekday']]], axis=1)
     # pfeature_matrix['label'] = pdata['bp_label']
     pft = pfeature_matrix.dropna()
     # pft =pft.columns.astype(str)
