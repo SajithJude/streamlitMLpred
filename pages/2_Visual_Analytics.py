@@ -72,8 +72,7 @@ with right_column:
 
     # Display the interactive HTML graph
     components.html(html_graph, height=600)
-maxrow = 10
-if st.button('Expand rows'):
-    maxrow += 10
+
+maxrow = st.slider('Maximum Rows to display',  0, 2400,)
 
 st.table(filtered_data.head(10), max_rows=maxrow)
