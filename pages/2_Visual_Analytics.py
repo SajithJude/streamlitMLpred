@@ -77,7 +77,7 @@ with right_column:
 l,r,m,p = st.columns((1,1,1,1))
 
 with l:
-    maxrow = st.slider('Maximum Rows to display',  0, 2400,(0,10))
+    maxrow = st.slider('Maximum Rows to display',  0, 2400)
 
 with m:
     timehrs = st.slider('Posted Hour of the day',  0, 24,(0,20))
