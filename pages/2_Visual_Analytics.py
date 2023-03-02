@@ -23,7 +23,7 @@ with left_column:
 
     x_axis = st.selectbox('Select X-axis', ['timestamp', 'bp_label', 'hour', 'weekday', 'patient_index'])
     y_axis = st.selectbox('Select Y-axis', ['timestamp', 'bp_label', 'hour', 'weekday', 'patient_index'])
-    patient_filter = st.selectbox("Select a patient index", list(range(1, 26)))
+    patient_filter = st.selectbox("Select a patient", list(range(1, 26)))
 
     y_low, y_up = st.slider('Select Y limit range',  0, 2400, (0, 12))
     x_low, x_up = st.slider('Select X limit range', 0, 2400, (0, 12))
@@ -72,4 +72,8 @@ with right_column:
 
     # Display the interactive HTML graph
     components.html(html_graph, height=600)
-st.table(filtered_data)
+maxrow = 10
+if st.button('Expand rows'):
+    maxrow += 10
+
+st.table(filtered_data.head(10), max_rows=maxrow)
