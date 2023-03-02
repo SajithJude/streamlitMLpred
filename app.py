@@ -28,7 +28,7 @@ if uploaded_file is not None:
     pft = pfeature_matrix.dropna()
     # Use the trained model to predict the chances of a new patient having bipolar disorder
     new_tweet_history_vec = pft.drop(columns=['label'])
-    inputvect = new_tweet_history_vec.columns.astype(str)
+    inputvect = new_tweet_history_vec.columns.astype(int)
     with open('model.pkl', 'rb') as f:
         model = pickle.load(f)
 
