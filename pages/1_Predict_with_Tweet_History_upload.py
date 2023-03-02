@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore")
 # text = st.text_area("Enter text:")
 
 # Create a function to generate a word cloud
-def create_wordcloud(text):
+def create_wordcloud(text,list):
     wordcloud = WordCloud(width=800, height=800,
                           background_color='white',
                           min_font_size=10).generate(text)
@@ -27,6 +27,8 @@ def create_wordcloud(text):
     ax.axis("off")
     plugins.connect(fig, plugins.MousePosition(fontsize=14))
     plugins.connect(fig, plugins.Zoom())
+    tooltip = plugins.PointHTMLTooltip(scatter, labels=list(pdata['tweet']))
+    plugins.connect(fig, tooltip)
     # plugins.connect(fig, plugins.Pan())
     components.html(fig_to_html(fig), height=600)
     # st.write()
@@ -69,7 +71,7 @@ if uploaded_file is not None:
     # new_tweet_history_vec = vectorizer.transform([new_tweet_history])
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
     st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
-    create_wordcloud(text)
+    create_wordcloud(text,pdata['tweet'])
 
 
 
