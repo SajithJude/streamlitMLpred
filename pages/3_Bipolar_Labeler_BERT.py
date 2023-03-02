@@ -16,7 +16,7 @@ st.markdown("""
     
 #### Bipolar Labeling Tool, 
 
-  This tool utilizes a deep learning BERT model to analyze tweet descriptions and predict signs of bipolar disorder. By leveraging the power of machine learning, our tool can analyze large datasets of tweets and identify patterns and language that are indicative of bipolar disorder.
+  This tool utilizes a deep learning BERT model to analyze tweet descriptions and predict signs of bipolar disorder. By leveraging the power of Deep learning Transformers, this tool can be helpful to analyze descriptions of tweets and identify patterns and language that are indicative of bipolar disorder.
 In addition to its predictive capabilities, This tool can also be used to label tweets when creating a new dataset. This is particularly useful for researchers and analysts who are looking to build their own datasets for studying mental health conditions such as bipolar disorder.
   """)
 
