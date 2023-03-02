@@ -8,8 +8,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Pvectorizer = TfidfVectorizer(stop_words='english', max_features=500)
 
-st.write("helloword")
-
 # Create file uploader and define accepted file types
 uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
@@ -30,9 +28,10 @@ if uploaded_file is not None:
     pft = pfeature_matrix.dropna()
     # Use the trained model to predict the chances of a new patient having bipolar disorder
     new_tweet_history_vec = pft.drop(columns=['label'])
+    inputvect = new_tweet_history_vec.columns.astype(str)
     with open('model.pkl', 'rb') as f:
         model = pickle.load(f)
 
     # new_tweet_history_vec = vectorizer.transform([new_tweet_history])
-    prob = model.predict_proba(new_tweet_history_vec)[0][1]
+    prob = model.predict_proba(inputvect)[0][1]
     st.write("Probability of having bipolar disorder:", prob)
