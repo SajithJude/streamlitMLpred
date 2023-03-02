@@ -37,3 +37,7 @@ if user_input and button :
     # st.write("Logits: ",output.logits)
     y_pred = np.argmax(output.logits.detach().numpy(),axis=1)
     st.write("Prediction: ",d[y_pred[0]])
+
+
+st.markdown("[Colab NoteBook for Traning Script]:  https://lk.linkedin.com/in/nisandi-jayasuriya-294327194?trk=people_directory&original_referer=)")
+
