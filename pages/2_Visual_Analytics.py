@@ -96,4 +96,4 @@ else:
     filtered_data = data[data['bp_label'] == False]
 
 # filtered_data = data[data['patient_index'] == patient_filter]
-st.table(filtered_data.head(maxrow))
+st.table(filtered_data['tweet'].head(maxrow))
