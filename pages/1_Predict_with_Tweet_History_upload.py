@@ -99,7 +99,7 @@ if uploaded_file is not None:
         <div style="border-radius: 10px; background-color: #f1f1f1; padding: 20px;">
         <p style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Tweets Labeled as Bipolar related</p>
         <div style="background-color: #ddd; height: 20px; border-radius: 10px; overflow: hidden;">
-            <div style="background-color: #4CAF50; height: 20px; width: {num_true_labels}; border-radius: 50%; text-align: right; padding-right: 10px;">
+            <div style="background-color: #00308F; height: 20px; width: {num_true_labels}; border-radius: 10px; text-align: right; padding-right: 10px;">
             <span style="color: white; font-size: 16px;">{num_true_labels}</span>
             </div>
         </div>
