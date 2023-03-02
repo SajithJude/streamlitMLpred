@@ -47,9 +47,8 @@ if uploaded_file is not None:
     pdata['weekday'] = pdata['timestamp'].dt.weekday
     vectorizer = TfidfVectorizer(stop_words='english', max_features=500)
     textTweet = pdata['tweet']
-    st.write(textTweet)
+    # st.write(textTweet)
     text = " ".join(tweet for tweet in textTweet)
-    create_wordcloud(text)
 
 
 # Vectorize the text data
@@ -70,6 +69,7 @@ if uploaded_file is not None:
     # new_tweet_history_vec = vectorizer.transform([new_tweet_history])
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
     st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
+    create_wordcloud(text)
 
 
 
