@@ -16,6 +16,7 @@ uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 # If a file was uploaded, read the contents into a Pandas DataFrame
 if uploaded_file is not None:
     pdata = pd.read_csv(uploaded_file).dropna()
+    pdata.columns = pdata.columns.astype(str)
     pdata['timestamp'] = pd.to_datetime(pdata['timestamp'])
     pdata['hour'] = pdata['timestamp'].dt.hour
     pdata['weekday'] = pdata['timestamp'].dt.weekday
