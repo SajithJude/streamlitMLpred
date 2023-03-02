@@ -40,4 +40,4 @@ if uploaded_file is not None:
 
     # new_tweet_history_vec = vectorizer.transform([new_tweet_history])
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
-    st.write("Probability of having bipolar disorder:", "{:.2f}%".format(prob/100))
+    st.write("Probability of having bipolar disorder:", "{:.2f}%".format(prob*100))
