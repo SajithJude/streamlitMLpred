@@ -42,12 +42,12 @@ if uploaded_file is not None:
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
     st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
 
-    text = " ".join(tweet for tweet in textTweet)
-    wordcloud = WordCloud(width=800, height=800, background_color='black').generate(text)
-    plt.figure(figsize=(8,8))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.show()
+text = " ".join(tweet for tweet in textTweet)
+wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
+plt.figure(figsize=(8,8))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
 
 
 
