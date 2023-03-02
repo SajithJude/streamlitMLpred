@@ -93,7 +93,7 @@ if uploaded_file is not None:
         """
 
         # Display the curved edge card with percentage value
-        st.markdown(card_html, unsafe_allow_html=True)
+        components.html(card_html, unsafe_allow_html=True)
         st.write("The Number of Tweets found with Bipolar Labels :", num_true_labels)
         card_html2 = f"""
         <div style="border-radius: 10px; background-color: #f1f1f1; padding: 20px;">
@@ -107,7 +107,7 @@ if uploaded_file is not None:
         """
 
         # Display the curved edge card with percentage value
-        st.markdown(card_html2, unsafe_allow_html=True)
+        components.html(card_html2, unsafe_allow_html=True)
     with right_column:
         st.subheader("Word Cloud of Users Tweets")
         create_wordcloud(text)
