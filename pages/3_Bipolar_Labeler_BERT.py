@@ -39,5 +39,5 @@ if user_input and button :
     st.write("Prediction: ",d[y_pred[0]])
 
 
-st.markdown("[Colab NoteBook for Traning Script]:  https://lk.linkedin.com/in/nisandi-jayasuriya-294327194?trk=people_directory&original_referer=)")
+st.markdown("[Colab NoteBook for Traning Script]:  https://colab.research.google.com/drive/1bxDGTDPx0lZ3e2L3L_ZI2SEjh96KfCiH?usp=sharing")
 
