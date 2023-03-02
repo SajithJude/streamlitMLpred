@@ -27,7 +27,7 @@ if uploaded_file is not None:
     pfeature_matrix = pd.concat([pd.DataFrame(text_features.toarray()), pdata[['hour', 'weekday']]], axis=1)
     pfeature_matrix['label'] = pdata['bp_label']
     pft = pfeature_matrix.dropna()
-    pft =pft.columns.astype(str)
+    # pft =pft.columns.astype(str)
     # Use the trained model to predict the chances of a new patient having bipolar disorder
     new_tweet_history_vec = pft.drop(columns=['label'])
     # inputvect = new_tweet_history_vec.columns.astype(float)
