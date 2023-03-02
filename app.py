@@ -5,6 +5,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+import warnings
+warnings.filterwarnings("ignore")
 
 # Pvectorizer = TfidfVectorizer(stop_words='english', max_features=500)
 
