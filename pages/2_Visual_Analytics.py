@@ -14,7 +14,7 @@ data = pd.read_csv("data/streamlitdatabase.csv", parse_dates=['timestamp'])
 # Sidebar filters
 
 
-left_column, right_column , last_column= st.columns((1,3,1))
+left_column, right_column , last_column= st.columns((2,3,2))
 
 
 # Add elements to the left column
