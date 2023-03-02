@@ -42,6 +42,8 @@ uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 # If a file was uploaded, read the contents into a Pandas DataFrame
 if uploaded_file is not None:
     pdata = pd.read_csv(uploaded_file).dropna()
+    num_true_labels = (pdata['bp_labels'] == True).sum()
+
     # pdata.columns = pdata.columns.astype(str)
     pdata = pdata.drop(columns=['bp_label'])
     pdata['timestamp'] = pd.to_datetime(pdata['timestamp'])
@@ -79,6 +81,7 @@ if uploaded_file is not None:
     with left_column:
         st.header("Prediction")
         st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
+        st.write("The Number of Tweets found with Bipolar Labels :", num_true_labels)
     
     with right_column:
         st.subheader("Word Cloud of Users Tweets")
