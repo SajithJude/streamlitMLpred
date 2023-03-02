@@ -8,7 +8,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import warnings
 warnings.filterwarnings("ignore")
 
-# Pvectorizer = TfidfVectorizer(stop_words='english', max_features=500)
 
 # Create file uploader and define accepted file types
 uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
