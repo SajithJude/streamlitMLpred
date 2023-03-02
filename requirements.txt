@@ -3,3 +3,5 @@ scikit-learn
 pickle5
 pandas
 numpy
+mpld3
+matplotlib
