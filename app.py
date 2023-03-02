@@ -7,12 +7,7 @@ st.markdown("# Bipolar Disorder Analytical Platform")
 st.markdown("## Made by Researches for Researchers for the betterment of cognitive phychology")
 st.markdown("""
     
-#### Click on the arrow on the left to open Menue, 
-#### Input the URLS of the publications that revolve around your domain,
-#### Start with the link that is the most relevant
-#### Once you click on the generate button click on the titles of the generated content to expand
-#### Repeat the process with atleast 4 URLS
-#### Once youre Finished, click on the Review table to access all the generated content together
+#### Click on the arrow on the left to open Menu, 
 
   This app is designed to help researchers analyze their Twitter histories and predict the likelihood of developing bipolar disorder. By using advanced algorithms and machine learning techniques, our app can analyze thousands of tweets and identify patterns and trends that may indicate the presence of bipolar disorder.
 The app works by analyzing a user's Twitter history and looking for key phrases and language that are commonly associated with bipolar disorder. It takes into account factors such as the frequency and intensity of mood swings, the use of specific words or phrases that may indicate manic or depressive episodes, and other indicators of mental health status.
