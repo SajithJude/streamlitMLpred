@@ -31,11 +31,6 @@ if uploaded_file is not None:
     st.pyplot(y)
 
 
-    >>> fig, ax = plt.subplots()
->>> ax.scatter([1, 2, 3], [1, 2, 3])
->>>    ... other plotting actions ...
->>> st.pyplot(fig)
-
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
     x = pd.DataFrame(text_features.toarray())
