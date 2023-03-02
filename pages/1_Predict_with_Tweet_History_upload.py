@@ -27,7 +27,7 @@ def create_wordcloud(text,list):
     ax.axis("off")
     plugins.connect(fig, plugins.MousePosition(fontsize=14))
     plugins.connect(fig, plugins.Zoom())
-    tooltip = plugins.PointHTMLTooltip(scatter, labels=list(pdata['tweet']))
+    tooltip = plugins.PointHTMLTooltip(wordcloud, labels=list(pdata['tweet']))
     plugins.connect(fig, tooltip)
     # plugins.connect(fig, plugins.Pan())
     components.html(fig_to_html(fig), height=600)
