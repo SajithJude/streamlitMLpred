@@ -28,7 +28,8 @@ if uploaded_file is not None:
     plt.figure(figsize=(8,8))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
-    plt.show()
+    st.pyplot()
+
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
     x = pd.DataFrame(text_features.toarray())
