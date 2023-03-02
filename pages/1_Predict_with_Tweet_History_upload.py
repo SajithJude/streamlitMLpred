@@ -25,6 +25,8 @@ def create_wordcloud(text):
     fig, ax = plt.subplots()
     ax.imshow(wordcloud, interpolation='bilinear')
     ax.axis("off")
+    ax.set_xlabel('')
+    ax.set_ylabel('')
     plugins.connect(fig, plugins.MousePosition(fontsize=14))
     plugins.connect(fig, plugins.Zoom())
     # plugins.connect(fig, plugins.Pan())
