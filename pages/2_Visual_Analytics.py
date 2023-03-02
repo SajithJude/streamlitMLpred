@@ -75,4 +75,4 @@ with right_column:
 
 maxrow = st.slider('Maximum Rows to display',  0, 2400,)
 
-st.table(filtered_data.head(10), max_rows=maxrow)
+st.table(filtered_data, max_rows=maxrow)
