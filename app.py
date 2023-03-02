@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-Pvectorizer = TfidfVectorizer(stop_words='english', max_features=500)
+# Pvectorizer = TfidfVectorizer(stop_words='english', max_features=500)
 
 st.write("helloword")
 
@@ -19,6 +19,11 @@ if uploaded_file is not None:
     pdata['timestamp'] = pd.to_datetime(pdata['timestamp'])
     pdata['hour'] = pdata['timestamp'].dt.hour
     pdata['weekday'] = pdata['timestamp'].dt.weekday
+    vectorizer = TfidfVectorizer(stop_words='english', max_features=500)
+
+# Vectorize the text data
+    text_features = vectorizer.fit_transform(pdata['tweet'])
+
     pfeature_matrix = pd.concat([pd.DataFrame(text_features.toarray()), pdata[['hour', 'weekday']]], axis=1)
     pfeature_matrix['label'] = pdata['bp_label']
     pft = pfeature_matrix.dropna()
