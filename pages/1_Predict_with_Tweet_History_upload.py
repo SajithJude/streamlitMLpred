@@ -25,7 +25,7 @@ def create_wordcloud(text):
     ax.axis("off")
     plugins.connect(fig, plugins.MousePosition(fontsize=14))
     plugins.connect(fig, plugins.Zoom())
-    plugins.connect(fig, plugins.Pan())
+    # plugins.connect(fig, plugins.Pan())
     st.write(fig_to_html(fig))
 
 
