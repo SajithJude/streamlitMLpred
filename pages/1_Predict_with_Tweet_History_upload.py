@@ -23,6 +23,12 @@ if uploaded_file is not None:
     pdata['weekday'] = pdata['timestamp'].dt.weekday
     vectorizer = TfidfVectorizer(stop_words='english', max_features=500)
     textTweet = pdata['tweet']
+    text = " ".join(tweet for tweet in textTweet)
+    wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
+    plt.figure(figsize=(8,8))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.show()
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
     x = pd.DataFrame(text_features.toarray())
@@ -42,12 +48,7 @@ if uploaded_file is not None:
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
     st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
 
-text = " ".join(tweet for tweet in textTweet)
-wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
-plt.figure(figsize=(8,8))
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis("off")
-plt.show()
+
 
 
 
