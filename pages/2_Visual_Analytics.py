@@ -73,6 +73,27 @@ with right_column:
     # Display the interactive HTML graph
     components.html(html_graph, height=600)
 
-maxrow = st.slider('Maximum Rows to display',  0, 2400,)
 
+l,r,m,p = st.columns((1,1,1,1))
+
+with l:
+    maxrow = st.slider('Maximum Rows to display',  0, 2400,(0,10))
+
+with m:
+    timehrs = st.slider('Posted Hour of the day',  0, 24,(0,20))
+    filtered_data = data[(data['hour'] >= timehrs[0]) & (data['hour'] <= timehrs[1])]
+with r:
+    weekda = st.slider('Posted day of the week',  0, 6,(0,6))
+    filtered_data = data[(data['weekday'] >= weekda[0]) & (data['weekday'] <= weekda[1])]
+
+
+with p:
+    pl = st.radio('Bipolar label',['Tweets Labeled as Bipolar', 'Tweets that doesnt consist bipolar'] )
+
+if pl == "Tweets Labeled as Bipolar":
+    filtered_data = data[data['bp_label'] == True]
+else:
+    filtered_data = data[data['bp_label'] == False]
+
+# filtered_data = data[data['patient_index'] == patient_filter]
 st.table(filtered_data.head(maxrow))
