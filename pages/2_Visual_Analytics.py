@@ -5,10 +5,14 @@ import mpld3
 from mpld3 import plugins
 import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
+
+
+
 # Load the data
 data = pd.read_csv("data/streamlitdatabase.csv", parse_dates=['timestamp'])
 # st.table(data)
 # Sidebar filters
+
 
 left_column, right_column = st.columns((1,4))
 
@@ -68,3 +72,4 @@ with right_column:
 
     # Display the interactive HTML graph
     components.html(html_graph, height=600)
+st.table(filtered_data)
