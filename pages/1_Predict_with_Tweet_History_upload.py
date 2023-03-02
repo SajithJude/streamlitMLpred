@@ -4,7 +4,8 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -21,7 +22,7 @@ if uploaded_file is not None:
     pdata['hour'] = pdata['timestamp'].dt.hour
     pdata['weekday'] = pdata['timestamp'].dt.weekday
     vectorizer = TfidfVectorizer(stop_words='english', max_features=500)
-
+    textTweet = pdata['tweet']
 # Vectorize the text data
     text_features = vectorizer.fit_transform(pdata['tweet'])
     x = pd.DataFrame(text_features.toarray())
@@ -41,6 +42,12 @@ if uploaded_file is not None:
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
     st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
 
+    text = " ".join(tweet for tweet in textTweet)
+    wordcloud = WordCloud(width=800, height=800, background_color='black').generate(text)
+    plt.figure(figsize=(8,8))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.show()
 
 
 
