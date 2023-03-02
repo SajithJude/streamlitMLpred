@@ -68,8 +68,19 @@ if uploaded_file is not None:
 
     # new_tweet_history_vec = vectorizer.transform([new_tweet_history])
     prob = model.predict_proba(new_tweet_history_vec)[0][1]
-    st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
-    create_wordcloud(text)
+    
+    
+    left_column, right_column = st.columns((2,2))
+
+
+    # Add elements to the left column
+    with left_column:
+        st.header("Prediction")
+        st.write("The chances of This user having bipolar disorder:", "{:.2f}%".format(prob*100))
+    
+    with right_column:
+        st.subheader("Word Cloud of Users Tweets")
+        create_wordcloud(text)
 
 
 
