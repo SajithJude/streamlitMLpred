@@ -1,4 +1,4 @@
-import Streamlit as st
+import streamlit as st
 
 # lst = ['BERT Model', 'Preprocessing', 'Visualzing', 'Machine learning']
 # url = ['https://colab.research.google.com/drive/1A4tVWVlJXLqGkSXxs4UH48rLRSZRLhxn?usp=sharing','https://colab.research.google.com/drive/1A4tVWVlJXLqGkSXxs4UH48rLRSZRLhxn?usp=sharing','https://colab.research.google.com/drive/1A4tVWVlJXLqGkSXxs4UH48rLRSZRLhxn?usp=sharing','https://colab.research.google.com/drive/1A4tVWVlJXLqGkSXxs4UH48rLRSZRLhxn?usp=sharing']
